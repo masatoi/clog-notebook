@@ -1,0 +1,5 @@
+git clog https://github.com/rabbibotton/clog
+git clog-ace https://github.com/rabbibotton/clog-ace
+git clog-terminal https://github.com/rabbibotton/clog-terminal
+git clcm https://github.com/myaosato/clcm
+ql cl-debug-print :latest
