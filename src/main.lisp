@@ -1,12 +1,18 @@
-(defpackage clog-notebook
-  (:use #:cl #:clog)
+(defpackage #:clog-notebook
+  (:use #:cl
+        #:clog
+        #:cl-debug-print)
   (:import-from #:clog-user
                 #:*body*)
-  (:export #:start-notebook))
+  (:export #:start-notebook
+           #:stop-notebook))
 
 (in-package :clog-notebook)
 
+(use-debug-print) ; for debug
+
 ;;; Eval lisp code
+;; TODO: evalは別スレッドにする
 
 (defun eval-form (form)
   (handler-bind ((error (lambda (e)
@@ -183,6 +189,8 @@
   (load-css (html-document body) "/css/w3.css")
   (setf (title (html-document body)) "CLOG Notebook")
 
+  (setf *body* body) ; for debug
+
   (clog-gui:clog-gui-initialize body)
 
   (create-menu-bar body)
@@ -200,10 +208,24 @@
 
 ;; (create-div *body* :content "hoge")
 
-(defun start-notebook ()
+(defun start-notebook (&key (host "0.0.0.0")
+                            (port 8080)
+                            (server :hunchentoot))
   "Start notebook."
-  (initialize #'on-new-window)
+  (clog:initialize #'on-new-window
+                   :host host
+                   :port port
+                   :server server
+                   ;; CSSファイルなどをリポジトリ管理にしたいが大量のデータを持たなければいけない？
+                   ;; 個別に指定することもできるらしい
+                   ;; https://rabbibotton.github.io/clog/clog-manual.html#CLOG:STYLE%20GENERIC-FUNCTION
+                   ;; (setf (style clog-element ".w3-dropdown-content") "z-index:100")
+                   :static-root (merge-pathnames "./static-files/"
+                                                 (asdf:system-source-directory :clog-notebook)))
   (open-browser))
+
+(defun stop-notebook ()
+  (clog:shutdown))
 
 ;; w3-dropdown-content
 ;; $('.w3-dropdown-content').css('z-index', 100);
