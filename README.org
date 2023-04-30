@@ -1,14 +1,18 @@
 * Clog-Notebook 
 
-** Usage
-
 ** Installation
 
-```
+#+begin_src
 ros install masatoi/clog-notebook
 cd ~/.roswell/local-projects/masatoi/clog-notebook
 qlot install
+#+end_src
+
+** Usage
+
+#+begin_src
+cd ~/.roswell/local-projects/masatoi/clog-notebook
 qlot exec ros run -s clog-notebook -e '(clog-notebook:start-notebook)'
-```
+#+end_src
 
 ** TODO
