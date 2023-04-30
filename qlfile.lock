@@ -1,11 +1,11 @@
 ("quicklisp" .
  (:class qlot/source/dist:source-dist
   :initargs (:distribution "http://beta.quicklisp.org/dist/quicklisp.txt" :%version :latest)
-  :version "2022-07-08"))
+  :version "2023-02-15"))
 ("clog" .
  (:class qlot/source/git:source-git
   :initargs (:remote-url "https://github.com/rabbibotton/clog")
-  :version "git-fc91ce790192a42c4557174797827b97a10e96d4"))
+  :version "git-04d6df5d0b736f968cb0b838b38a8a517569d2f8"))
 ("clog-ace" .
  (:class qlot/source/git:source-git
   :initargs (:remote-url "https://github.com/rabbibotton/clog-ace")
@@ -17,8 +17,8 @@
 ("clcm" .
  (:class qlot/source/git:source-git
   :initargs (:remote-url "https://github.com/myaosato/clcm")
-  :version "git-fd0390bedf00c5be3f5c2eb8176ff73bede797b0"))
+  :version "git-44713443502560443bf74fd888899b41d34e9859"))
 ("cl-debug-print" .
  (:class qlot/source/ql:source-ql
   :initargs (:%version :latest)
-  :version "ql-2022-07-08"))
+  :version "ql-2023-02-15"))

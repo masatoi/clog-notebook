@@ -190,15 +190,15 @@
   (let ((notebook-body (create-div body)))
     (create-code-cell notebook-body)))
 
-(create-menu-bar *body*)
+;; (create-menu-bar *body*)
 
-(defparameter bar (clog-gui:create-gui-menu-bar *body*))
-(clog-gui:create-gui-menu-drop-down bar :content "File")
+;; (defparameter bar (clog-gui:create-gui-menu-bar *body*))
+;; (clog-gui:create-gui-menu-drop-down bar :content "File")
 
-(create-menu-bar *body*)
+;; (create-menu-bar *body*)
 
 
-(create-div *body* :content "hoge")
+;; (create-div *body* :content "hoge")
 
 (defun start-notebook ()
   "Start notebook."

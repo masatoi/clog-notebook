@@ -1,14 +1,14 @@
-* clog-notebook
+* Clog-Notebook 
 
 ** Usage
 
 ** Installation
 
-** TODO
+```
+ros install masatoi/clog-notebook
+cd ~/.roswell/local-projects/masatoi/clog-notebook
+qlot install
+qlot exec ros run -s clog-notebook -e '(clog-notebook:start-notebook)'
+```
 
-- セルにコントローラを統合して表示(アイコン化)
-- セパレータにコード/テキストの追加を表示
-- 実行中のセルの中止(interrupt)
-- 上下移動
-- ファイルのリスト
-- ファイルの出力
+** TODO
